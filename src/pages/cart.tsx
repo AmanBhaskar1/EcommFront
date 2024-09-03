@@ -19,7 +19,7 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const [couponCode, setCouponCode] = useState<string>("");
-  const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
+  const [isValidCouponCode] = useState<boolean>(false);
   const incrementHandler = (cartItem: CartItem) => {
     if (cartItem.quantity >= cartItem.stock) return;
     dispatch(addToCart({ ...cartItem, quantity: cartItem.quantity + 1 }));
